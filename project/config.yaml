@@ -1,0 +1,12 @@
+credentials:
+  usernames:
+    midasm:
+      name: midasm
+      password: midasm
+    test:
+      name: test
+      password: test
+preauthorized:
+  admin:
+    name: admin
+    password: admin

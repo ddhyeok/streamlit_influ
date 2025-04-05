@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+requests
+pyyaml
+scikit-learn
+plotly
+matplotlib
+altair
+Pillow
+openpyxl
+statsmodels
