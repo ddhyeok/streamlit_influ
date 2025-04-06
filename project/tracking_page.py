@@ -67,17 +67,23 @@ def tracking():
 
     Description = st.text_input("🔗 Insert Description", placeholder="Insert Description...")    
     insert_url = st.text_input("🔗 Insert URL", placeholder="Insert URL...")
+
     if st.button("🔗 Insert URL"):
         if insert_url in df["url"].values:
             st.warning("⚠️ Duplicate URL !!")
         elif Description in df["Description"].values:
             st.warning("⚠️ Duplicate Description !!")
+
         elif not is_valid_tiktok_url(insert_url):
-            st.warning("⚠️ No Description !!")
+            st.warning("⚠️ No Tiktok url !!")
 
 
         elif insert_url == '':
             st.warning("⚠️ No Url !!")
+
+        elif Description =="":
+            st.warning("⚠️ No Description !!")
+
         else:
             
             new= {"Description":[Description],"url": [insert_url],"likes":[[]],"comments":[[]],"shared":[[]],"saved":[[]]}
