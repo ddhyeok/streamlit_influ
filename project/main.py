@@ -72,14 +72,16 @@ def main_page():
                         st.metric(label="likes",value=t.to_str(loaded.profile['total_likes'].tolist()[-1]),
                             delta=t.to_str(loaded.profile['total_likes'].tolist()[-1]-loaded.profile['total_likes'].tolist()[-7]))
                     except:
-                        st.metric(label="likes",value=t.to_str(loaded.profile['total_likes'].tolist()[-1]))
+                        st.metric(label="likes",value=t.to_str(loaded.profile['total_likes'].tolist()[-1]),
+                            delta=t.to_str(loaded.profile['total_likes'].tolist()[-1]-loaded.profile['total_likes'].tolist()[0]))
                 with col[1]:
                     st.markdown('#### ')
                     try:
                         st.metric(label="Followers",value=t.to_str(loaded.profile['followers'].tolist()[-1]),
                             delta=t.to_str(loaded.profile['followers'].tolist()[-1]-loaded.profile['followers'].tolist()[-7]))
                     except:
-                        st.metric(label="Followers",value=t.to_str(loaded.profile['followers'].tolist()[-1]))
+                        st.metric(label="Followers",value=t.to_str(loaded.profile['followers'].tolist()[-1]),
+                            delta=t.to_str(loaded.profile['followers'].tolist()[-1]-loaded.profile['followers'].tolist()[0]))
                 
                 with col[2]:
                     st.markdown('#### ')
@@ -87,7 +89,8 @@ def main_page():
                         st.metric(label="Following",value=t.to_str(loaded.profile['following'].tolist()[-1]),
                             delta=t.to_str(loaded.profile['following'].tolist()[-1]-loaded.profile['following'].tolist()[-7]))
                     except:
-                        st.metric(label="Following",value=t.to_str(loaded.profile['following'].tolist()[-1]))
+                        st.metric(label="Following",value=t.to_str(loaded.profile['following'].tolist()[-1]),
+                            delta=t.to_str(loaded.profile['following'].tolist()[-1]-loaded.profile['following'].tolist()[0]))
                 
                 with col[3]:
                     st.markdown('#### ')
@@ -95,7 +98,8 @@ def main_page():
                         st.metric(label="Total ER",value=t.to_str(np.round(loaded.profile['ER'].tolist()[-1],2))+'%',
                             delta=t.to_str(np.round(loaded.profile['ER'].tolist()[-1]-loaded.profile['ER'].tolist()[-7],3)))
                     except:
-                        st.metric(label="Total ER",value=t.to_str(np.round(loaded.profile['ER'].tolist()[-1],2))+'%')
+                        st.metric(label="Total ER",value=t.to_str(np.round(loaded.profile['ER'].tolist()[-1],2))+'%',
+                            delta=t.to_str(np.round(loaded.profile['ER'].tolist()[-1]-loaded.profile['ER'].tolist()[0],3)))
 
                 st.plotly_chart(profile_fig, use_container_width=True)    
                 
